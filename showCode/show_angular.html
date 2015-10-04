@@ -1,0 +1,49 @@
+<div style="white-space: pre; font-weight: bold; font-size: 14px">
+<h3>Angular for displaying code</h3>
+(function() {
+
+ 	var app = angular.module(&quot;puzzleCode&quot;, []);
+
+ 	app.controller(&quot;ShowCodeController&quot;, function() {
+ 		this.showCode = false;
+ 		this.codeIndex = 0;
+
+ 		this.setShowCode = function() {
+
+ 			this.showCode = !this.showCode;
+ 		};
+
+ 		this.changeCodeIndex = function(value) {
+
+ 			this.codeIndex += value;
+
+ 			if (this.codeIndex &gt; 2)
+ 				this.codeIndex = 0;
+
+ 			if (this.codeIndex &lt; 0)
+ 				this.codeIndex = 1;
+ 			};
+ 		});
+
+ 		app.directive(&quot;showhtml&quot;, function() {
+ 			return {
+ 				restrict: &quot;E&quot;,
+ 				templateUrl: &quot;showCode/show_html.html&quot;
+ 			};
+ 		});
+
+ 		app.directive(&quot;showreact&quot;, function() {
+ 			return {
+ 				restrict: &quot;E&quot;,
+ 				templateUrl: &quot;showCode/show_react.html&quot;
+ 			};
+ 		});
+
+ 		app.directive(&quot;showangular&quot;, function() {
+ 			return {
+ 				restrict: &quot;E&quot;,
+ 				templateUrl: &quot;showCode/show_angular.html&quot;
+ 			};
+ 		});
+ 	})();
+</div>

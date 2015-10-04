@@ -1,0 +1,33 @@
+<div style="white-space: pre; font-weight: bold; font-size: 14px">
+<h3>HTML and Angular</h3>
+&lt;!DOCTYPE html&gt;
+ &lt;html ng-app=&quot;puzzleCode&quot;&gt;
+ 	&lt;head&gt;
+ 		&lt;meta charset=&quot;UTF-8&quot; /&gt;
+ 		&lt;title&gt;Project&lt;/title&gt;
+ 		&lt;script src=&quot;build/jquery.js&quot;&gt;&lt;/script&gt;
+ 		&lt;script src=&quot;build/react-with-addons.js&quot;&gt;&lt;/script&gt;
+ 		&lt;script src=&quot;build/JSXTransformer.js&quot;&gt;&lt;/script&gt;
+ 		&lt;script type=&quot;text/jsx&quot; src=&quot;code/main.js&quot;&gt;&lt;/script&gt;
+ 		&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+ 		&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js&quot;&gt;&lt;/script&gt;
+ 		&lt;script type=&quot;text/javascript&quot; src=&quot;showCode/showCodeApp.js&quot;&gt;&lt;/script&gt;
+ 	&lt;/head&gt;
+ 	&lt;body&gt;
+ 		&lt;h3&gt;Puzzle made with &lt;a href=&quot;http://facebook.github.io/react/&quot; target=&quot;_blank&quot;&gt;React&lt;/a&gt;&lt;/h3&gt;
+ 		&lt;h2 id=&quot;successHeader&quot; style=&quot;color: green; visibility: hidden&quot;&gt;Success!!!&lt;/h2&gt;
+
+ 		&lt;div id=&quot;reactContainer&quot;&gt;&lt;/div&gt;
+
+ 		&lt;!-- If the user clicks the Show Code button on the bottom of the page, code is displayed. --&gt;
+ 		&lt;div style=&quot;margin: 350px 0 0px 0px&quot; ng-controller=&quot;ShowCodeController as store&quot;&gt;
+ 			&lt;h2&gt;View code here.&lt;/h2&gt;
+ 			&lt;button style=&quot;margin-top: 0; padding-bottom: 0&quot; ng-click=&quot;store.setShowCode()&quot;&gt;Show Code&lt;/button&gt;
+ 			&lt;button ng-show=&quot;store.showCode&quot; ng-click=&quot;store.changeCodeIndex(-1)&quot;&gt;Prev&lt;/button&gt;
+ 			&lt;button ng-show=&quot;store.showCode&quot; ng-click=&quot;store.changeCodeIndex(1)&quot;&gt;Next&lt;/button&gt;
+ 			&lt;showhtml ng-show=&quot;store.showCode &amp;&amp; store.codeIndex === 0&quot;&gt;&lt;/showhtml&gt;
+ 			&lt;showreact ng-show=&quot;store.showCode &amp;&amp; store.codeIndex === 1&quot;&gt;&lt;/showreact&gt;
+ 		&lt;/div&gt;
+ 	&lt;/body&gt;
+ &lt;/html&gt;
+ </div>

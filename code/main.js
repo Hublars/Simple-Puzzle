@@ -159,8 +159,6 @@ function scramblePictures() {
 		imageNumbers[i] = imageNumbers[rand];
 		imageNumbers[rand] = tmpNum;
 	}
-	
-	console.log(imageNumbers);
 }
 
 // The numbers for the images.

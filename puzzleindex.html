@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="puzzleCode">
 	<head>
 		<meta charset="UTF-8" />
 		<title>Project</title>
@@ -8,11 +8,25 @@
 		<script src="build/JSXTransformer.js"></script>
 		<script type="text/jsx" src="code/main.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+		<script type="text/javascript" src="showCode/showCodeApp.js"></script>
 	</head>
 	<body>
-		<h3>Puzzle made with <a href="http://facebook.github.io/react/" target="_blank">React</a></h3>
+		<h3>Puzzle made with <a href="http://facebook.github.io/react/" target="_blank">React</a>.</h3>
+		<a href="../index.html">To Start page</a>
 		<h2 id="successHeader" style="color: green; visibility: hidden">Success!!!</h2>
 		
 		<div id="reactContainer"></div>
+		
+		<!-- If the user clicks the Show Code button on the bottom of the page, code is displayed. -->
+		<div style="margin: 350px 0 0px 0px" ng-controller="ShowCodeController as store">
+			<h2>View code here.</h2>
+			<button style="margin-top: 0; padding-bottom: 0" ng-click="store.setShowCode()">Show Code</button>
+			<button ng-show="store.showCode" ng-click="store.changeCodeIndex(-1)">Prev</button>
+			<button ng-show="store.showCode" ng-click="store.changeCodeIndex(1)">Next</button>
+			<showhtml ng-show="store.showCode && store.codeIndex === 0"></showhtml>
+			<showreact ng-show="store.showCode && store.codeIndex === 1"></showreact>
+			<showangular ng-show="store.showCode && store.codeIndex === 2"></showangular>
+		</div>
 	</body>
 </html>
